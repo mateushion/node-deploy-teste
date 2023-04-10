@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build-app": "npm run build-client && npm install && npm start",
-    "build-client": "mkdir -p public && cd client && npm run build-app && cd ..",
+    "build-client": "cd client && npm run build-app && cd ..",
     "start": "node index.js",
     "dev": "nodemon"
   },
