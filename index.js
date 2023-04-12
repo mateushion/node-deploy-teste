@@ -15,6 +15,7 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json())
 // ----------------------------------------
 
+
 app.get('/', function (req, res) {  // rota de fallback do frontend
     res.render(path.join(__dirname + '/site-deploy/index.html'));
 });
@@ -25,7 +26,15 @@ app.post('/lorahion', function (req, res) {
     console.log('Seu pacote chegou com sucesso!')
     console.log(`${tmp.getHours() - 3}:${tmp.getMinutes()}:${tmp.getSeconds()}`)
     console.log((req.body))
+    console.log('------------------------------------')
+
+    // Fonte: https://attacomsian.com/blog/nodejs-base64-encode-decode
+    const msg_decrypt = Buffer.from(req.body.params.payload, 'base64').toString('utf-8')
+
+    console.log('O pacote decriptografado é:')
+    console.log(msg_decrypt)
     console.log('=====================================')
+
 
     return res.status(200).send()  // valeu léo
 })
