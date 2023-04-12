@@ -15,9 +15,11 @@ app.get('/', function (req, res) {  // rota de fallback do frontend
 });
 
 app.post('/lorahion', function (req, res) {
+    const tmp = new Date()
     console.log('====================================')
     console.log('Seu pacote chegou com sucesso!')
-    console.log(req.data)
+    console.log(`${tmp.getHours()}:${tmp.getMinutes()}:${tmp.getSeconds()}`)
+    console.log(req.body)
     console.log('=====================================')
 
     return res.status(200).send()  // valeu léo
