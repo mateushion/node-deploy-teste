@@ -33,3 +33,6 @@ app.post('/lorahion', function (req, res) {
 app.listen(port, () => {
   console.log(`node-deploy-teste rodando na porta: ${port}`)
 })
+
+
+// Fonte: https://dev.to/tqbit/quick-dirty-how-to-deploy-a-fullstack-vue-js-app-with-a-working-node-js-backend-51k4
