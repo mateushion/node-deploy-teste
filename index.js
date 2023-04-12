@@ -10,9 +10,18 @@ app.use(history());
 // O app Vue será inserido dentro de 'public'
 app.use(express.static('site-deploy'));
 
-app.get('/', function (req, res) {
+app.get('/', function (req, res) {  // rota de fallback do frontend
     res.render(path.join(__dirname + '/site-deploy/index.html'));
 });
+
+app.post('/lorahion', function (req, res) {
+    console.log('====================================')
+    console.log('Seu pacote chegou com sucesso!')
+    console.log(req.data)
+    console.log('=====================================')
+
+    return res.status(200).send()  // valeu léo
+})
 
 app.listen(port, () => {
   console.log(`node-deploy-teste rodando na porta: ${port}`)
