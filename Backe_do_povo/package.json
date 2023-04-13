@@ -1,0 +1,12 @@
+{
+  "name": "Backe_do_povo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "consign": "^0.1.6",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "knex": "^2.4.2"
+  }
+}
