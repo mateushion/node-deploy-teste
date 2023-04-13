@@ -1,3 +1,6 @@
+// FRONTEND DO POVO
+// um povo unido jamais será vencido
+
 const express = require('express')
 const app = express()
 const port = process.env.PORT ? Number(process.env.PORT) : 3000
