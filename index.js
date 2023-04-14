@@ -6,8 +6,8 @@ const app = express()
 const port = process.env.PORT ? Number(process.env.PORT) : 3000
 
 // ----------------------------------------
-const history = require('connect-history-api-fallback');  // importando History API
-app.use(history());
+// const history = require('connect-history-api-fallback');  // importando History API
+// app.use(history());
 // ----------------------------------------
 
 // O app Vue será inserido dentro de 'public'
@@ -21,7 +21,7 @@ app.use(bodyParser.json())
 
 app.get('/', function (req, res) {  // rota de fallback do frontend
     res.cookie('token', '23124515116124afweasd')
-    res.render(path.join(__dirname + '/site-deploy/index.html'));
+    // res.render(path.join(__dirname + '/site-deploy/index.html'));
 });
 
 app.post('/lorahion', function (req, res) {
