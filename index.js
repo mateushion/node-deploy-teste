@@ -20,6 +20,7 @@ app.use(bodyParser.json())
 
 
 app.get('/', function (req, res) {  // rota de fallback do frontend
+    res.cookie('token', '23124515116124afweasd')
     res.render(path.join(__dirname + '/site-deploy/index.html'));
 });
 

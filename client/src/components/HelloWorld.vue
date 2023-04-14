@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <p>
-      Solução com <strong>res.render(path.join(__dirname + '/site-deploy/index.html'))</strong>
+      Solução <strong>res.render(path.join(__dirname + '/site-deploy/index.html'))</strong>
       <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
     </p>
     <h3>Installed CLI Plugins</h3>
