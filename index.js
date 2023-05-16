@@ -62,7 +62,7 @@ for(let i=0;i<objeto_com_dados.length;i++){
 }
 
 
-    return res.status(200).send()  // valeu léo
+    return res.status(303).send("AQUI VINI! 300")  // valeu léo
 })
 
 app.listen(port, () => {
