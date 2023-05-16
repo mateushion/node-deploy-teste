@@ -3,7 +3,7 @@
 
 const express = require('express')
 const app = express()
-const port = process.env.PORT ? Number(process.env.PORT) : 3000
+const port = 3000;
 
 // ----------------------------------------
 // const history = require('connect-history-api-fallback');  // importando History API
@@ -38,6 +38,28 @@ app.post('/lorahion', function (req, res) {
     console.log('O pacote decriptografado é:')
     console.log(msg_decrypt)
     console.log('=====================================')
+
+
+
+ 
+
+let objeto_com_dados  = msg_decrypt;
+
+
+
+let the_h = `${objeto_com_dados[11]}${objeto_com_dados[12]}${objeto_com_dados[13]}${objeto_com_dados[14]}`;
+console.log("_h:",parseInt(the_h, 16));
+
+console.log(" &&&&&&&&&&&&&&&&&&&&&&&&&&&& ");
+console.log(objeto_com_dados);
+
+for(let i=0;i<objeto_com_dados.length;i++){
+
+        console.log("BYTE Nº",i);
+        console.log("valor do byte:",objeto_com_dados[i])
+        console.log(" - - - -  - - - -  - - - - - -  - ")
+
+}
 
 
     return res.status(200).send()  // valeu léo
