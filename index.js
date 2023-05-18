@@ -29,7 +29,7 @@ app.post('/lorahion', function (req, res) {
     console.log('====================================')
     console.log('Seu pacote chegou com sucesso!')
     console.log(`${tmp.getHours() - 3}:${tmp.getMinutes()}:${tmp.getSeconds()}`)
-    console.log((req.body))
+    // console.log((req.body))
     console.log('------------------------------------')
 
     // Fonte: https://attacomsian.com/blog/nodejs-base64-encode-decode
@@ -39,27 +39,28 @@ app.post('/lorahion', function (req, res) {
                
             const msg_decrypt = Buffer.from(req.body.params.payload, 'base64').toString('utf-8')
 
-                console.log('O pacote decriptografado é:')
-                console.log(msg_decrypt)
-                console.log('=====================================')
-                console.log(typeof(req.body.params.payload ))
-                // let objeto_com_dados  = msg_decrypt;
-
-
-                // let the_h = `${objeto_com_dados[11]}${objeto_com_dados[12]}${objeto_com_dados[13]}${objeto_com_dados[14]}`;
-                // console.log("_h:",parseInt(the_h, 16));
-
-                // console.log(" &&&&&&&&&&&&&&&&&&&&&&&&&&&& ");
-                // console.log(objeto_com_dados);
-
-                // for(let i=0;i<objeto_com_dados.length;i++){
-
-                //         console.log("BYTE Nº",i);
-                //         console.log("valor do byte:",objeto_com_dados[i])
-                //         console.log(" - - - -  - - - -  - - - - - -  - ")
-
-                // }
+            let bytes = [];
+            console.log('O pacote decriptografado é:');
+            console.log(msg_decrypt);
+            console.log("tamanho:",msg_decrypt.length);
+            console.log('=====================================');
         
+            for (let c = 0; c < msg_decrypt.length; c += 2) {
+                bytes.push(parseInt(msg_decrypt.substr(c, 2), 16)); // substr -> parte de c e pega 2 casas na string analisada
+              }
+
+
+
+        ///TESTE//////////////////////////
+        
+            console.log('   ');
+            console.log('O pacote em vetor 8 bits:');
+            console.log(bytes);
+            console.log('   ');
+       
+        //////////////////////////
+        
+                
     }
 
 
