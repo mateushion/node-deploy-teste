@@ -35,14 +35,14 @@ app.post('/lorahion', function (req, res) {
     // Fonte: https://attacomsian.com/blog/nodejs-base64-encode-decode
 
     if((req.body.params.payload != undefined || req.body.params.payload != null)){
-        if(typeof(req.body.params.payload) == String || typeof(req.body.params.payload) == Number ||typeof(req.body.params.payload) == Object){                        
+        
                
             const msg_decrypt = Buffer.from(req.body.params.payload, 'base64').toString('utf-8')
 
                 console.log('O pacote decriptografado é:')
                 console.log(msg_decrypt)
                 console.log('=====================================')
-
+                console.log(typeof(req.body.params.payload ))
                 // let objeto_com_dados  = msg_decrypt;
 
 
@@ -59,7 +59,7 @@ app.post('/lorahion', function (req, res) {
                 //         console.log(" - - - -  - - - -  - - - - - -  - ")
 
                 // }
-        }
+        
     }
 
 
