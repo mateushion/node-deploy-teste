@@ -33,36 +33,37 @@ app.post('/lorahion', function (req, res) {
     console.log('------------------------------------')
 
     // Fonte: https://attacomsian.com/blog/nodejs-base64-encode-decode
-    const msg_decrypt = Buffer.from(req.body.params.payload, 'base64').toString('utf-8')
 
-    console.log('O pacote decriptografado é:')
-    console.log(msg_decrypt)
-    console.log('=====================================')
+    if((req.body.params.payload != undefined || req.body.params.payload != null)){
+        if(typeof(req.body.params.payload) == String || typeof(req.body.params.payload) == Number ||typeof(req.body.params.payload) == Object){                        
+               
+            const msg_decrypt = Buffer.from(req.body.params.payload, 'base64').toString('utf-8')
 
+                console.log('O pacote decriptografado é:')
+                console.log(msg_decrypt)
+                console.log('=====================================')
 
-
- 
-
-let objeto_com_dados  = msg_decrypt;
-
-
-
-let the_h = `${objeto_com_dados[11]}${objeto_com_dados[12]}${objeto_com_dados[13]}${objeto_com_dados[14]}`;
-console.log("_h:",parseInt(the_h, 16));
-
-console.log(" &&&&&&&&&&&&&&&&&&&&&&&&&&&& ");
-console.log(objeto_com_dados);
-
-for(let i=0;i<objeto_com_dados.length;i++){
-
-        console.log("BYTE Nº",i);
-        console.log("valor do byte:",objeto_com_dados[i])
-        console.log(" - - - -  - - - -  - - - - - -  - ")
-
-}
+                // let objeto_com_dados  = msg_decrypt;
 
 
-    return res.status(303).send("AQUI VINI! 300")  // valeu léo
+                // let the_h = `${objeto_com_dados[11]}${objeto_com_dados[12]}${objeto_com_dados[13]}${objeto_com_dados[14]}`;
+                // console.log("_h:",parseInt(the_h, 16));
+
+                // console.log(" &&&&&&&&&&&&&&&&&&&&&&&&&&&& ");
+                // console.log(objeto_com_dados);
+
+                // for(let i=0;i<objeto_com_dados.length;i++){
+
+                //         console.log("BYTE Nº",i);
+                //         console.log("valor do byte:",objeto_com_dados[i])
+                //         console.log(" - - - -  - - - -  - - - - - -  - ")
+
+                // }
+        }
+    }
+
+
+    return res.status(200).send("AQUI VINI! 300")  // valeu léo
 })
 
 app.listen(port, () => {
