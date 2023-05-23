@@ -42,24 +42,16 @@ app.post('/lorahion', function (req, res) {
             let bytes = [];
             console.log('O pacote decriptografado é:');
             console.log(msg_decrypt);
-            console.log("tamanho:",msg_decrypt.length);
-            console.log('=====================================');
-        
-            for (let c = 0; c < msg_decrypt.length; c += 2) {
-                bytes.push(parseInt(msg_decrypt.substr(c, 2), 16)); // substr -> parte de c e pega 2 casas na string analisada
-              }
+             
+         
+
+        //------------------------------------------------------------
+        //------------------------------------------------------------
+        //COLOCAR SISTEMA QUE DESCOMPACTA O SISTEMA E CRIA JSON
 
 
 
-        ///TESTE//////////////////////////
-        
-            console.log('   ');
-            console.log('O pacote em vetor 8 bits:');
-            console.log(bytes);
-            console.log('   ');
-       
-        //////////////////////////
-        
+
                 
     }
 
