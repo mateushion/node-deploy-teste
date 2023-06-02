@@ -16,6 +16,15 @@ app.use(bodyParser.json())
 // ----------------------------------------
 
 
+console.log(" ===================================== ");
+console.log(" ===================================== ");
+
+console.log("           branck master AWS           ");
+
+console.log(" ===================================== ");
+console.log(" ===================================== ");
+
+
 app.get('/', function (req, res) {  // rota de fallback do frontend
     res.render(path.join(__dirname + '/site-deploy/index.html'));
 });
