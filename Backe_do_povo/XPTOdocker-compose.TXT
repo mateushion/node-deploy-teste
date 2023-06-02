@@ -1,0 +1,11 @@
+version: '5.0'
+
+services:
+  dev02:
+    image: dev05    
+    environment:
+      - NODE_ENV=product
+    build: .
+    ports:
+      - '8080:8080'
+    command: yarn teste

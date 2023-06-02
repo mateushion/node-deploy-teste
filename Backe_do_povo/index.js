@@ -12,14 +12,35 @@ require('dotenv').config()                      //dotenv para definir modo teste
 
 badabess.db = db;
 
-const door = 3137;
+const door = 8080;
 
-consign() 
-    .include('/.knexfile.js')
-    .then('./routes.js')
+consign()  
+    .include('./knexfile.js')
     .then('./api')
+    .then('./routes.js')    
     .into(badabess)
 
 
-app.listen(door, () => {                         //Carregamos servidor HTTP
+badabess.listen(door, () => {                         //Carregamos servidor HTTP
+    console.log(`HION DEV SERVER A EXECUTAR NA PORTA ${door}`);})
+
+
+    //------ inicialicação do express duplicado
+const anotherEXPRe = require('express')()
+const anotherConsign = require('consign'); 
+
+const anotherDB = require('./db');                     //Importa database relacional (Postgres)
+require('dotenv').config()                      //dotenv para definir modo teste ou produção
+
+anotherEXPRe.anotherDB = anotherDB;
+
+const door = 8080;
+
+anotherConsign()   
+    .then('./api')
+    .then('./routes.js')    
+    .into(anotherEXPRe)
+
+
+anotherEXPRe.listen(door, () => {                         //Carregamos servidor HTTP
     console.log(`HION DEV SERVER A EXECUTAR NA PORTA ${door}`);})

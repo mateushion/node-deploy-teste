@@ -8,12 +8,14 @@
 // informações importadas 
  
 
-if(process.env.NODE_ENV =='teste'){
+if(true){
   module.exports = {
 
     client: "postgresql",
     connection: {
-      database: 'mvp2023',
+      host : '192.168.0.3:5433',
+      port: 5432,
+      database: 'tdocker',
       user: 'postgres',
       password: 'hionmultscan'
   },

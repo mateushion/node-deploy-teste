@@ -1,0 +1,29 @@
+FROM node:16.19.0-slim
+
+# o diretório dentro do node para ele ter uma pasta e fazer as coisas 
+WORKDIR /usr/app
+
+# copiar esses arquivos para ele iniciar 
+COPY package.json yarn.lock ./
+
+#rodar o comando abaixo
+RUN yarn install
+
+# copiar os arquivos para o docker
+COPY . .
+
+#porta para expor no docker que o pc terá acesso
+EXPOSE 5432-8080 
+
+#comando do servidor startar aplicação
+CMD ["yarn", "teste"]
+
+#fazer a imagem; ponto no final indica que o dockerfile está no endereço mostrado e a imagem será construida na pasta atual
+#docker build -t    NOME_DA_IMAGEM_AQUI .
+
+#docker image ls
+
+#inicializador -d é o nome da imagem 
+# docker run -p 8080:8080 -d nomedobaguio
+
+# docker ps -a
