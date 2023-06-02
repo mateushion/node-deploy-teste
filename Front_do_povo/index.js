@@ -1,5 +1,9 @@
         
 if(process.env.NODE_ENV =='product'){
+
+console.log("INICIANDO NODE ENV");
+console.log(process.env.NODE_ENV);
+
         const express = require('express')
         const app = express()
         const port = process.env.PORT ? Number(process.env.PORT) : 3000

@@ -6,12 +6,9 @@
   "engines": {
     "node": "16"
   },
-  "scripts": {
-    "build-app": "npm run build-client && npm install",
-    "build-client": "cd client && npm run build-app && cd ..",
+  "scripts": {    
     "portaum": "SET NODE_ENV=teste&&nodemon index.js ",
-    "portadois": "SET NODE_ENV=product&&nodemon index.js ",
-    "dev": "nodemon"
+    "portadois": "SET NODE_ENV=product&&nodemon index.js "    
   },
   "author": "",
   "license": "ISC",
