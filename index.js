@@ -35,7 +35,7 @@ app.get('/', function (req, res) {  // rota de fallback do frontend
 
 app.post('/lorahion', function (req, res) {
     const tmp = new Date()
-    console.log('====================================')
+    console.log('=====NOVO NOVO ===============================')
     console.log('Seu pacote chegou com sucesso!')
     console.log(`${tmp.getHours() - 3}:${tmp.getMinutes()}:${tmp.getSeconds()}`)
     // console.log((req.body))
@@ -52,7 +52,11 @@ app.post('/lorahion', function (req, res) {
             let bytes = [];
             console.log('O pacote decriptografado é:');
             console.log(msg_decrypt);
+              
             
+
+            console.log('msg_decrypt[0]');
+            console.log(msg_decrypt[0]);
 
             let statusDecimal =   parseInt(msg_decrypt[0],10);
             let SOCTotal =   parseInt(`${msg_decrypt[2]}${msg_decrypt[3]}`,10);
