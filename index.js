@@ -1,10 +1,13 @@
+// FRONTEND DO POVO
+// um povo unido jamais será vencido
+
 const express = require('express')
 const app = express()
-const port = process.env.PORT ? Number(process.env.PORT) : 3000
+const port = 3000;
 
 // ----------------------------------------
-const history = require('connect-history-api-fallback');  // importando History API
-app.use(history());
+// const history = require('connect-history-api-fallback');  // importando History API
+// app.use(history());
 // ----------------------------------------
 
 // O app Vue será inserido dentro de 'public'
@@ -26,7 +29,8 @@ console.log(" ===================================== ");
 
 
 app.get('/', function (req, res) {  // rota de fallback do frontend
-    res.render(path.join(__dirname + '/site-deploy/index.html'));
+    res.cookie('token', '23124515116124afweasd')
+    // res.render(path.join(__dirname + '/site-deploy/index.html'));
 });
 
 app.post('/lorahion', function (req, res) {
@@ -34,18 +38,34 @@ app.post('/lorahion', function (req, res) {
     console.log('====================================')
     console.log('Seu pacote chegou com sucesso!')
     console.log(`${tmp.getHours() - 3}:${tmp.getMinutes()}:${tmp.getSeconds()}`)
-    console.log((req.body))
+    // console.log((req.body))
     console.log('------------------------------------')
 
     // Fonte: https://attacomsian.com/blog/nodejs-base64-encode-decode
-    const msg_decrypt = Buffer.from(req.body.params.payload, 'base64').toString('utf-8')
 
-    console.log('O pacote decriptografado é:')
-    console.log(msg_decrypt)
-    console.log('=====================================')
+    if((req.body.params.payload != undefined || req.body.params.payload != null)){
+        
+               
+            const msg_decrypt = Buffer.from(req.body.params.payload, 'base64').toString('utf-8')
+
+            let bytes = [];
+            console.log('O pacote decriptografado é:');
+            console.log(msg_decrypt);
+             
+         
+
+        //------------------------------------------------------------
+        //------------------------------------------------------------
+        //COLOCAR SISTEMA QUE DESCOMPACTA O SISTEMA E CRIA JSON
 
 
-    return res.status(200).send()  // valeu léo
+
+
+                
+    }
+
+
+    return res.status(200).send("AQUI VINI! 300")  // valeu léo
 })
 
 app.listen(port, () => {

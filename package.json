@@ -7,7 +7,7 @@
     "node": "16"
   },
   "scripts": {
-    "build-app": "npm run build-client && npm install",
+    "build-app": "npm install",
     "build-client": "cd client && npm run build-app && cd ..",
     "start": "node index.js",
     "dev": "nodemon"
