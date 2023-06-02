@@ -1,4 +1,8 @@
         
+require('dotenv').config()                      //dotenv para definir modo teste ou produção
+
+console.log("ENTROU NO SISTEMA index.js");
+
 if(process.env.NODE_ENV =='product'){
 
 console.log("INICIANDO NODE ENV");
@@ -88,3 +92,4 @@ if(process.env.NODE_ENV =='teste'){
 
 
  }
+ 
