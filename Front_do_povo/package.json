@@ -7,8 +7,8 @@
     "node": "16"
   },
   "scripts": {    
-    "portaum": "SET NODE_ENV=teste&&nodemon index.js ",
-    "portadois": "SET NODE_ENV=product&&nodemon index.js "    
+    "portaum": "node index1.js ",
+    "portadois": "node index2.js "    
   },
   "author": "",
   "license": "ISC",

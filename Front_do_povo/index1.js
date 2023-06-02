@@ -3,14 +3,14 @@ require('dotenv').config()                      //dotenv para definir modo teste
 
 console.log("ENTROU NO SISTEMA index.js");
 
-if(process.env.NODE_ENV =='product'){
+ 
 
 console.log("INICIANDO NODE ENV");
 console.log(process.env.NODE_ENV);
 
         const express = require('express')
         const app = express()
-        const port = process.env.PORT ? Number(process.env.PORT) : 3000
+        const port =   3000
 
         // ----------------------------------------
         const history = require('connect-history-api-fallback');  // importando History API
@@ -53,43 +53,5 @@ console.log(process.env.NODE_ENV);
         console.log(`node-deploy-teste rodando na porta: ${port}`)
         })
 
-}
-// Fonte: https://dev.to/tqbit/quick-dirty-how-to-deploy-a-fullstack-vue-js-app-with-a-working-node-js-backend-51k4
-//======================================================================================
-
-
-if(process.env.NODE_ENV =='teste'){
- //------ inicialicação do express duplicado
- const anotherEXPRe = require('express')()
  
-  
-  
-
- const bodyParser2 = require('body-parser');
- anotherEXPRe.use(bodyParser2.json())
-   
- anotherEXPRe.post('/loradois', function (req, res) {
-      const tmp = new Date()
-      console.log('***************$$$$$$$$$$$$$$*************')
-      console.log('Seu pacote chegou com sucesso no LORA DOIS !')
-      console.log(`${tmp.getHours() - 3}:${tmp.getMinutes()}:${tmp.getSeconds()}`)
-      console.log((req.body))
-      console.log('------------------------------------')
-  
-      // Fonte: https://attacomsian.com/blog/nodejs-base64-encode-decode
-      const msg_decrypt = Buffer.from(req.body.params.payload, 'base64').toString('utf-8')
-  
-      console.log('O pacote decriptografado no LORA DOIS é:')
-      console.log(msg_decrypt)
-      console.log('***************$$$$$$$$$$$$$$*************')
-  
-  
-      return res.status(200).send()  // valeu léo
-  })     
-
- anotherEXPRe.listen(3030, () => {                         //Carregamos servidor HTTP
-     console.log(`HION DEV SERVER --LORA DOIS ---- A EXECUTAR NA PORTA  3030`);})
-
-
- }
  
