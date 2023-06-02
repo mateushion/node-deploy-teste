@@ -55,7 +55,7 @@ if(process.env.NODE_ENV =='teste'){
  const anotherEXPRe = require('express')()
  
   
- const door = 3002;
+  
 
  const bodyParser2 = require('body-parser');
  anotherEXPRe.use(bodyParser2.json())
@@ -79,8 +79,8 @@ if(process.env.NODE_ENV =='teste'){
       return res.status(200).send()  // valeu léo
   })     
 
- anotherEXPRe.listen(door, () => {                         //Carregamos servidor HTTP
-     console.log(`HION DEV SERVER --LORA DOIS ---- A EXECUTAR NA PORTA ${door}`);})
+ anotherEXPRe.listen(3030, () => {                         //Carregamos servidor HTTP
+     console.log(`HION DEV SERVER --LORA DOIS ---- A EXECUTAR NA PORTA  3030`);})
 
 
  }
